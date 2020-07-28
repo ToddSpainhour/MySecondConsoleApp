@@ -49,6 +49,7 @@ namespace MySecondConsoleApp
 
 
             // string literal
+            // the @ before a string lets you put in \ without causing issues
             var poem = @"Roses are red,
                 violets are blue,
                 csharp is great,
@@ -89,6 +90,72 @@ namespace MySecondConsoleApp
 
             // blue text C# keywords
             // green text stuff you've created or dotnet framework type thing (things defined outside of C#)
+
+
+            // you have to provide boolean statements to your if statetment
+
+            var shouldExcute = true;
+            
+            if (!string.IsNullOrEmpty(name))
+            {
+                Console.WriteLine($"Hello {name}. Welcome to this console app.");
+            }
+
+
+            // don't write large switch statments, keep them short
+            
+            switch (oneCharacter)
+            {
+                case 'a' :
+                case 'b' :
+                        Console.WriteLine("It's the letter A!");
+                        break;
+                case 'c' :
+                    Console.WriteLine("It's the letter C!");
+                    break;
+                default :
+                    Console.WriteLine("This is your default! It wasn't A or B!");
+                    break;
+            }
+
+            for (int i = 0; i < names.Length; i++)
+            {
+                if (i < 3)
+                {
+                    continue;
+                }
+                Console.WriteLine($"This current name is {names[i]}.");
+            }
+            // more common loop we will use is foreach
+            foreach (var n in names)
+            {
+                Console.WriteLine($"Inside the foreach loops the name is {n}");
+            }
+
+            // while (true) will cause an invinet loop because true will always be true
+            while (true)
+            {
+                if (DateTime.Now > new DateTime(2020,7,27,19,28,40))
+                {
+                    break;
+                }
+            }
+
+            Console.WriteLine("Please enter your name...");
+            var userName = Console.ReadLine();
+
+            Console.WriteLine($"Hello, {userName}");
+
+
+            Console.WriteLine("Please enter a comma seperate list of numbers...");
+            var listOfNumbers = Console.ReadLine();
+
+            listOfNumbers.Split(',');
+
+            foreach (var digit in listOfNumbers)
+            {
+                Console.WriteLine(digit);
+            }
 
         }
     }
